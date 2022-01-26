@@ -1,0 +1,19 @@
+<div class="container my-5 ">
+    <div class="card shadow-lg p-3">
+        <h5>To do list</h5>
+        <div class='form-group'>
+            <input type='text' class='form-control' [formControl]="input">
+
+            <button class="btn btn-primary my-3" (click)="add()">Add </button>
+        </div>
+        <ng-template [ngIf]="todo.length > 0">
+            <ul class='list-group'>
+                <li class='list-group-item d-flex justify-content-between' *ngFor='let item of todo' #todoli>
+                    <label> {{item}} </label>
+                    <button class='btn btn-danger btn-sm ' (click)="delete(todoli)">Delete</button>
+                </li>
+            </ul>
+        </ng-template>
+
+    </div>
+</div>

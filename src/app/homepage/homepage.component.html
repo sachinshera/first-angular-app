@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col" *ngFor="let img of photos">
+        <div class="card">
+            <div class="card-content">
+                <div class="card-header">
+                    <h6>
+                        {{img.title}}
+                    </h6>
+                </div>
+                <img src="{{img.path}}" alt="" class="img-responsive card-img-top">
+                <div class="card-footer">
+                    <p>
+                        {{img.description}}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h1 class="text-center">Students Reports</h1>
+    <table class="table table-bordered">
+        <thead>
+            <th>Name</th>
+            <th>Roll</th>
+            <th>marks</th>
+            <th>Result</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let std of students">
+                <td>
+                    {{std.name}}
+                </td>
+                <td>
+                    {{std.roll}}
+                </td>
+                <td>
+                    {{std.marks}}
+                </td>
+                <td>
+                    <p *ngIf="std.marks > 50 ;else stdFail">Pass </p>
+                    <ng-template #stdFail>
+                        <p>
+                            Fail
+                        </p>
+                    </ng-template>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

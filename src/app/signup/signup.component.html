@@ -1,0 +1,50 @@
+<div class="container my-5">
+    <form class="w-50 shadow-lg mx-auto  p-3" [formGroup]="signupForm" (submit)="submitSignUp()">
+        <div formGroupName="p_info">
+            <h5>Personal Information</h5>
+            <div class='form-group'>
+                <label for='First Name'>First Name</label>
+                <input type='text' class='form-control' formControlName="firstname">
+            </div>
+            <div class='form-group'>
+                <label for='Last Name'>Last Name</label>
+                <input type='text' class='form-control' formControlName="lastname">
+            </div>
+
+            <div class='form-group'>
+                <label for='Email'>Email</label>
+                <input type='email' class='form-control' formControlName="email">
+            </div>
+
+            <div class='form-group'>
+                <label for='phone'>Phone</label>
+                <input type='number' class='form-control' formControlName="phone">
+            </div>
+        </div>
+
+        <div formGroupName="address_info">
+            <h5>Address</h5>
+            <div class='form-group'>
+                <label for='Address'>Street Addres</label>
+                <input type='text' class='form-control' formControlName="street">
+            </div>
+            <div class='form-group'>
+                <label for='city'>City</label>
+                <input type='text' class='form-control' formControlName="city">
+            </div>
+
+            <div class='form-group'>
+                <label for='state'>State</label>
+                <input type='text' class='form-control' formControlName="state">
+            </div>
+
+            <div class='form-group'>
+                <label for='country'>Country</label>
+                <input type='text' class='form-control' formControlName="country">
+            </div>
+        </div>
+        <div class='form-group'>
+            <button class='btn btn-primary' type='submit'>Signup</button>
+        </div>
+    </form>
+</div>
